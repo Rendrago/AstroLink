@@ -1,0 +1,7 @@
+import numpy as np #Numpy Module Imported
+
+class main: #Zodiac Affinity Function
+
+
+if __name__ == '__main__':
+  Main.main()
