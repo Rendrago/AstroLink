@@ -1,7 +1,7 @@
 import numpy as np #Numpy Module Imported
 
 class main: #Zodiac Affinity Function
-
-
+  Birthday = input("When is your Birthday? Month, Date")
+  def zoadiac_sign(month,date
 if __name__ == '__main__':
   Main.main()
