@@ -1,18 +1,22 @@
 import numpy as np #Numpy Module Imported
 
-class main: #Zodiac Affinity Function
-    idiot = true
-    While idiot == true:
-      Birthday = input("When is your Birthday? (Month, Date) E.g. January 1")
-      day = [int(s) for s in date.split() if s.isdigit()]
-      if (January in Birthday and any(num in range(1,32)) for num in [int(i) for i in Birthday.split() if s.isdigit()]) or (February in Birthday and any(num in range(1,30)) for num in [int(i) for i in Birthday.split() if s.isdigit()]) or (March in Birthday and any(num in range(1,32)) for num in [int(i) for i in Birthday.split() if s.isdigit()]) or (April in Birthday and any(num in range(1,31)) for num in [int(i) for i in Birthday.split() if s.isdigit()]) or (May in Birthday and any(num in range(1,32)) for num in [int(i) for i in Birthday.split() if s.isdigit()]) or (June in Birthday and any(num in range(1,31)) for num in [int(i) for i in Birthday.split() if s.isdigit()]) or (July in Birthday and any(num in range(1,32)) for num in [int(i) for i in Birthday.split() if s.isdigit()]) or (August in Birthday and any(num in range(1,32)) for num in [int(i) for i in Birthday.split() if s.isdigit()]) or (September in Birthday and any(num in range(1,31)) for num in [int(i) for i in Birthday.split() if s.isdigit()]) or (November in Birthday and any(num in range(1,31)) for num in [int(i) for i in Birthday.split() if s.isdigit()]) or (December in Birthday and any(num in range(1,32)) for num in [int(i) for i in Birthday.split() if s.isdigit()]):
+class Main: 
+    def Zodiac_Sign(month,day): #Zodiac Sign Function
+        print(f"Testing function out: {month,day}")
+    idiot = True
+    Birthday = ""
+    while idiot is True:
+      Birthday = input("When is your Birthday? (Month, Date) E.g. 'January 1'")
+      day = [int(i) for i in Birthday.split() if i.isdigit()]
+      if ("January" in Birthday and any(num in range(1,32) for num in day)) or ("February" in Birthday and any(num in range(1,30) for num in day)) or ("March" in Birthday and any(num in range(1,32) for num in day)) or ("April" in Birthday and any(num in range(1,31) for num in day)) or ("May" in Birthday and any(num in range(1,32) for num in day)) or ("June" in Birthday and any(num in range(1,31) for num in day)) or ("July" in Birthday and any(num in range(1,32) for num in day)) or ("August" in Birthday and any(num in range(1,32) for num in day)) or ("September" in Birthday and any(num in range(1,31) for num in day)) or ("November" in Birthday and any(num in range(1,31) for num in day)) or ("December" in Birthday and any(num in range(1,32) for num in day)):
         idiot = False
-        day = [int(s) for s in date.split() if s.isdigit()]
-        month = date.split()[0]
-      elif (January or February or March or April or May or June or July or August or September or October or November or December) not in Birthday:
+        month = Birthday.split()[0]
+        day = [int(i) for i in Birthday.split() if i.isdigit()]
+        Zodiac_Sign(month,day)
+      elif ("January" or "February" or "March" or "April" or "May" or "June" or "July" or "August" or "September" or "October" or "November" or "December") not in Birthday:
         print("You are an idiot, That is not a Month, try again")
       else:
         print("You are an idiot, There are not many days in that month, try again")
-      def zoadiac_sign(month,day)
+
 if __name__ == '__main__':
-  Main.main()
+  Main()
