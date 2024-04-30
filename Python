@@ -1,14 +1,23 @@
 import numpy as np #Numpy Module Imported
 
 class Main: 
-    def Zodiac_Sign(month,day): #Zodiac Sign Function
-        print(f"Testing function out: {month,day}")
+    def get_zodiac_sign(month,day): #Takes in the users Birthday
+        annual_calendar = np.array([{'January': 31, 'February': 29, 'March': 31, 'April': 30, 'May': 31, 'June': 30, 'July': 31, 'August': 31, 'September': 30, 'October': 31, 'November': 30, 'December': 31}])
+        days_in_month = int(annual_calendar[0][month])
+        if ((days_in_month - days_in_month * 0.10) <= day):
+            print(f'Your Birthday is at the end of the month,\nyou can either be a {}, which has these characteristics:\n{}\nor a {}, which has these characteristics:\n{}')
+            input(f'would you like to be a {} or a {}')
+        elif ((days_in_month - days_in_month * 0.90) >= day):
+            print(f'Your Birthday is at the beginning of the month,\nyou can either be a {}, which has these characteristics:\n{}\nor a {}, which has these characteristics:\n{}')
+            input(f'would you like to be a {} or a {}')
+        else:
+            print(f'Your are a {}')
     idiot = True
     Birthday = ""
     while idiot is True:
       Birthday = input("When is your Birthday? (Month, Date) E.g. 'January 1'")
       day = [int(i) for i in Birthday.split() if i.isdigit()]
-      if ("January" in Birthday and any(num in range(1,32) for num in day)) or ("February" in Birthday and any(num in range(1,30) for num in day)) or ("March" in Birthday and any(num in range(1,32) for num in day)) or ("April" in Birthday and any(num in range(1,31) for num in day)) or ("May" in Birthday and any(num in range(1,32) for num in day)) or ("June" in Birthday and any(num in range(1,31) for num in day)) or ("July" in Birthday and any(num in range(1,32) for num in day)) or ("August" in Birthday and any(num in range(1,32) for num in day)) or ("September" in Birthday and any(num in range(1,31) for num in day)) or ("November" in Birthday and any(num in range(1,31) for num in day)) or ("December" in Birthday and any(num in range(1,32) for num in day)):
+      if ("January" in Birthday and any(num in range(1,32) for num in day)) or ("February" in Birthday and any(num in range(1,30) for num in day)) or ("March" in Birthday and any(num in range(1,32) for num in day)) or ("April" in Birthday and any(num in range(1,31) for num in day)) or ("May" in Birthday and any(num in range(1,32) for num in day)) or ("June" in Birthday and any(num in range(1,31) for num in day)) or ("July" in Birthday and any(num in range(1,32) for num in day)) or ("August" in Birthday and any(num in range(1,32) for num in day)) or ("September" in Birthday and any(num in range(1,31) for num in day)) or ("October" in Birthday and any(num in range(1,32) for num in day)) or ("November" in Birthday and any(num in range(1,31) for num in day)) or ("December" in Birthday and any(num in range(1,32) for num in day)):
         idiot = False
         month = Birthday.split()[0]
         day = [int(i) for i in Birthday.split() if i.isdigit()]
