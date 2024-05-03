@@ -10,15 +10,46 @@ class Main:
           if ("January" in Birthday and any(num in range(1,32) for num in day)) or ("February" in Birthday and any(num in range(1,30) for num in day)) or ("March" in Birthday and any(num in range(1,32) for num in day)) or ("April" in Birthday and any(num in range(1,31) for num in day)) or ("May" in Birthday and any(num in range(1,32) for num in day)) or ("June" in Birthday and any(num in range(1,31) for num in day)) or ("July" in Birthday and any(num in range(1,32) for num in day)) or ("August" in Birthday and any(num in range(1,32) for num in day)) or ("September" in Birthday and any(num in range(1,31) for num in day)) or ("October" in Birthday and any(num in range(1,32) for num in day)) or ("November" in Birthday and any(num in range(1,31) for num in day)) or ("December" in Birthday and any(num in range(1,32) for num in day)):
             idiot = False
             month = Birthday.split()[0]
-            if (month == 'January' and any(num in range(20,32) for num in day)) or (month == 'February' and any(num in range(1,18) for num in day)):
+            if (month == 'January' and any(num in range(20,32) for num in day)) or (month == 'February' and any(num in range(1,19) for num in day)):
                 zodiac = 'Aquarius'
                 print('You are an Aquarius!')
-            if ...
-
+            if (month == 'February' and any(num in range(19,30) for num in day)) or (month == 'March' and any(num in range(1,21) for num in day)):
+                zodiac = 'Pisces'
+                print('You are an Pisces!')
+            if (month == 'March' and any(num in range(21,32) for num in day)) or (month == 'April' and any(num in range(1,20) for num in day)):
+                zodiac = 'Aries'
+                print('You are an Aries!')
+            if (month == 'April' and any(num in range(20,31) for num in day)) or (month == 'May' and any(num in range(1,21) for num in day)):
+                zodiac = 'Taurus'
+                print('You are a Taurus!')
+            if (month == 'May' and any(num in range(21,32) for num in day)) or (month == 'June' and any(num in range(1,22) for num in day)):
+                zodiac = 'Gemini'
+                print('You are a Gemini!')
+            if (month == 'June' and any(num in range(22,31) for num in day)) or (month == 'July' and any(num in range(1,23) for num in day)):
+                zodiac = 'Cancer'
+                print('You are an Cancer!')
+            if (month == 'July' and any(num in range(23,32) for num in day)) or (month == 'August' and any(num in range(1,23) for num in day)):
+                zodiac = 'Leo'
+                print('You are a Leo!')
+            if (month == 'August' and any(num in range(23,32) for num in day)) or (month == 'September' and any(num in range(1,23) for num in day)):
+                zodiac = 'Virgo'
+                print('You are a Virgo!')
+            if (month == 'September' and any(num in range(23,31) for num in day)) or (month == 'October' and any(num in range(1,24) for num in day)):
+                zodiac = 'Libra'
+                print('You are a Libra!')
+            if (month == 'October' and any(num in range(24,32) for num in day)) or (month == 'November' and any(num in range(1,20) for num in day)):
+                zodiac = 'Scorpio'
+                print('You are a Scorpio!')
+            if (month == 'November' and any(num in range(20,31) for num in day)) or (month == 'December' and any(num in range(1,22) for num in day)):
+                zodiac = 'Sagittarius'
+                print('You are a Sagittarius!')
+            if (month == 'December' and any(num in range(22,32) for num in day)) or (month == 'January' and any(num in range(1,20) for num in day)):
+                zodiac = 'Capricorn'
+                print('You are a Capricon!')
           elif ("January" or "February" or "March" or "April" or "May" or "June" or "July" or "August" or "September" or "October" or "November" or "December") not in Birthday:
-            print("You are an idiot, That is not a Month, try again")
+            print("Make sure to enter a Capitalized Month")
           else:
-            print("You are an idiot, There are not many days in that month, try again")
+            print("Make sure you enter a day that is in the month you entered")
     get_zodiac_sign()
 if __name__ == '__main__':
   Main()
