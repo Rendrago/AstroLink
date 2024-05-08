@@ -1,55 +1,150 @@
-import numpy as np #Numpy Module Imported
+import pandas as pd
 
-class Main: 
-    def get_zodiac_sign():
-        idiot = True
-        Birthday = ""
-        while idiot is True:
-          Birthday = input("When is your Birthday? (Month, Date) E.g. 'January 1'")
-          day = [int(i) for i in Birthday.split() if i.isdigit()]
-          if ("January" in Birthday and any(num in range(1,32) for num in day)) or ("February" in Birthday and any(num in range(1,30) for num in day)) or ("March" in Birthday and any(num in range(1,32) for num in day)) or ("April" in Birthday and any(num in range(1,31) for num in day)) or ("May" in Birthday and any(num in range(1,32) for num in day)) or ("June" in Birthday and any(num in range(1,31) for num in day)) or ("July" in Birthday and any(num in range(1,32) for num in day)) or ("August" in Birthday and any(num in range(1,32) for num in day)) or ("September" in Birthday and any(num in range(1,31) for num in day)) or ("October" in Birthday and any(num in range(1,32) for num in day)) or ("November" in Birthday and any(num in range(1,31) for num in day)) or ("December" in Birthday and any(num in range(1,32) for num in day)):
-            idiot = False
-            month = Birthday.split()[0]
-            if (month == 'January' and any(num in range(20,32) for num in day)) or (month == 'February' and any(num in range(1,19) for num in day)):
-                zodiac = 'Aquarius'
-                print('You are an Aquarius!')
-            if (month == 'February' and any(num in range(19,30) for num in day)) or (month == 'March' and any(num in range(1,21) for num in day)):
-                zodiac = 'Pisces'
-                print('You are an Pisces!')
-            if (month == 'March' and any(num in range(21,32) for num in day)) or (month == 'April' and any(num in range(1,20) for num in day)):
-                zodiac = 'Aries'
-                print('You are an Aries!')
-            if (month == 'April' and any(num in range(20,31) for num in day)) or (month == 'May' and any(num in range(1,21) for num in day)):
-                zodiac = 'Taurus'
-                print('You are a Taurus!')
-            if (month == 'May' and any(num in range(21,32) for num in day)) or (month == 'June' and any(num in range(1,22) for num in day)):
-                zodiac = 'Gemini'
-                print('You are a Gemini!')
-            if (month == 'June' and any(num in range(22,31) for num in day)) or (month == 'July' and any(num in range(1,23) for num in day)):
-                zodiac = 'Cancer'
-                print('You are an Cancer!')
-            if (month == 'July' and any(num in range(23,32) for num in day)) or (month == 'August' and any(num in range(1,23) for num in day)):
-                zodiac = 'Leo'
-                print('You are a Leo!')
-            if (month == 'August' and any(num in range(23,32) for num in day)) or (month == 'September' and any(num in range(1,23) for num in day)):
-                zodiac = 'Virgo'
-                print('You are a Virgo!')
-            if (month == 'September' and any(num in range(23,31) for num in day)) or (month == 'October' and any(num in range(1,24) for num in day)):
-                zodiac = 'Libra'
-                print('You are a Libra!')
-            if (month == 'October' and any(num in range(24,32) for num in day)) or (month == 'November' and any(num in range(1,20) for num in day)):
-                zodiac = 'Scorpio'
-                print('You are a Scorpio!')
-            if (month == 'November' and any(num in range(20,31) for num in day)) or (month == 'December' and any(num in range(1,22) for num in day)):
-                zodiac = 'Sagittarius'
-                print('You are a Sagittarius!')
-            if (month == 'December' and any(num in range(22,32) for num in day)) or (month == 'January' and any(num in range(1,20) for num in day)):
-                zodiac = 'Capricorn'
-                print('You are a Capricon!')
-          elif ("January" or "February" or "March" or "April" or "May" or "June" or "July" or "August" or "September" or "October" or "November" or "December") not in Birthday:
-            print("Make sure to enter a Capitalized Month")
-          else:
-            print("Make sure you enter a day that is in the month you entered")
-    get_zodiac_sign()
+class Zodiac: 
+
+  def get_zodiac_sign():
+    birthday_not_entered = True
+    Birthday = ""
+    while birthday_not_entered is True:
+      Birthday = input("\nWhen is the Birthday? (Month, Date) E.g. 'January 1' ")
+      day = [int(i) for i in Birthday.split() if i.isdigit()]
+      if ("January" in Birthday and any(num in range(1,32) for num in day)) or ("February" in Birthday and any(num in range(1,30) for num in day)) or ("March" in Birthday and any(num in range(1,32) for num in day)) or ("April" in Birthday and any(num in range(1,31) for num in day)) or ("May" in Birthday and any(num in range(1,32) for num in day)) or ("June" in Birthday and any(num in range(1,31) for num in day)) or ("July" in Birthday and any(num in range(1,32) for num in day)) or ("August" in Birthday and any(num in range(1,32) for num in day)) or ("September" in Birthday and any(num in range(1,31) for num in day)) or ("October" in Birthday and any(num in range(1,32) for num in day)) or ("November" in Birthday and any(num in range(1,31) for num in day)) or ("December" in Birthday and any(num in range(1,32) for num in day)):
+        birthday_not_entered = False
+        month = Birthday.split()[0]
+        if (month == 'January' and any(num in range(20,32) for num in day)) or (month == 'February' and any(num in range(1,19) for num in day)):
+          zodiac = 'Aquarius (Jan 20 - Feb 18)'
+          print('The Zodiac is Aquarius!')
+        if (month == 'February' and any(num in range(19,30) for num in day)) or (month == 'March' and any(num in range(1,21) for num in day)):
+          zodiac = 'Pisces (Feb 19 - March 20)'
+          print('The Zodiac is Pisces!')
+        if (month == 'March' and any(num in range(21,32) for num in day)) or (month == 'April' and any(num in range(1,20) for num in day)):
+          zodiac = 'Aries (Mar 21 - Apr 19)'
+          print('The Zodiac is Aries!')
+        if (month == 'April' and any(num in range(20,31) for num in day)) or (month == 'May' and any(num in range(1,21) for num in day)):
+          zodiac = 'Taurus (Apr 20 - May 20)'
+          print('The Zodiac is Taurus!')
+        if (month == 'May' and any(num in range(21,32) for num in day)) or (month == 'June' and any(num in range(1,22) for num in day)):
+          zodiac = 'Gemini (May 21 - Jun 21)'
+          print('The Zodiac is Gemini!')
+        if (month == 'June' and any(num in range(22,31) for num in day)) or (month == 'July' and any(num in range(1,23) for num in day)):
+          zodiac = 'Cancer (Jun 22 - Jul 22)'
+          print('The Zodiac is Cancer!')
+        if (month == 'July' and any(num in range(23,32) for num in day)) or (month == 'August' and any(num in range(1,23) for num in day)):
+          zodiac = 'Leo (Jul 23 - Aug 22)'
+          print('The Zodiac is Leo!')
+        if (month == 'August' and any(num in range(23,32) for num in day)) or (month == 'September' and any(num in range(1,23) for num in day)):
+          zodiac = 'Virgo (Aug 23 - Sep 22)'
+          print('The Zodiac is Virgo!')
+        if (month == 'September' and any(num in range(23,31) for num in day)) or (month == 'October' and any(num in range(1,24) for num in day)):
+          zodiac = 'Libra (Sep 23 - Oct 23)'
+          print('The Zodiac is Libra!')
+        if (month == 'October' and any(num in range(24,32) for num in day)) or (month == 'November' and any(num in range(1,20) for num in day)):
+          zodiac = 'Scorpio (Oct 24 - Nov 21)'
+          print('The Zodiac is Scorpio!')
+        if (month == 'November' and any(num in range(20,31) for num in day)) or (month == 'December' and any(num in range(1,22) for num in day)):
+          zodiac = 'Sagittarius (Nov 22 - Dec 21)'
+          print('The Zodiac is Sagittarius!')
+        if (month == 'December' and any(num in range(22,32) for num in day)) or (month == 'January' and any(num in range(1,20) for num in day)):
+          zodiac = 'Capricorn (Dec 22 - Jan 19)'
+          print('The Zodiac is Capricon!')
+      elif ("January" or "February" or "March" or "April" or "May" or "June" or "July" or "August" or "September" or "October" or "November" or "December") not in Birthday:
+        print("Please capitalize and/or enter a real day in the year")
+    return zodiac
+  
+  def enter_zodiac_sign():
+    zodiac_not_entered = True
+    while zodiac_not_entered is True:
+      zodiac = input('\nWhat is the Zodiac? ')
+      if zodiac == 'Aquarius':
+        zodiac_not_entered = False
+        zodiac_date = 'Aquarius (Jan 20 - Feb 18)'
+      elif zodiac == 'Pisces':
+        zodiac_not_entered = False
+        zodiac_date = 'Pisces (Feb 19 - March 20)'
+      elif zodiac == 'Aries':
+        zodiac_not_entered = False
+        zodiac_date = 'Aries (Mar 21 - Apr 19)'
+      elif zodiac == 'Taurus':
+        zodiac_not_entered = False
+        zodiac_date = 'Taurus (Apr 20 - May 20)'
+      elif zodiac == 'Gemini':
+        zodiac_not_entered = False
+        zodiac_date = 'Gemini (May 21 - Jun 21)'
+      elif zodiac == 'Cancer':
+        zodiac_not_entered = False
+        zodiac_date = 'Cancer (Jun 22 - Jul 22)'
+      elif zodiac == 'Leo':
+        zodiac_not_entered = False
+        zodiac_date = 'Leo (Jul 23 - Aug 22)'
+      elif zodiac == 'Virgo':
+        zodiac_not_entered = False
+        zodiac_date = 'Virgo (Aug 23 - Sep 22)'
+      elif zodiac == 'Libra':
+        zodiac_not_entered = False
+        zodiac_date = 'Libra (Sep 23 - Oct 23)'
+      elif zodiac == 'Scorpio':
+        zodiac_not_entered = False
+        zodiac_date = 'Scorpio (Oct 24 - Nov 21)'
+      elif zodiac == 'Sagittarius':
+        zodiac_not_entered = False
+        zodiac_date = 'Sagittarius (Nov 22 - Dec 21)'
+      elif zodiac == 'Capricorn':
+        zodiac_not_entered = False
+        zodiac_date = 'Capricorn (Dec 22 - Jan 19)'
+      else:
+        print('\nPlease Capitalize and spell correctly')
+    return zodiac_date
+
+  def compatability(zodiac1,zodiac2):
+    data = pd.read_csv("/Users/gardnergooch/Downloads/compatability.csv",index_col=0)
+    cross_section = data.loc[zodiac1,zodiac2]
+    compatability_info = ''
+    for i in cross_section.split()[:-3]:
+      compatability_info += str(i) + ' '
+    compatability_rating = (cross_section.split()[-3])+' '+(cross_section.split()[-2])+' '+(cross_section.split()[-1])
+    return compatability_rating, compatability_info
+  
+    
 if __name__ == '__main__':
-  Main()
+  while True:
+    option_selected = True
+    while option_selected is True:
+      choice_1 = input('\nTo find the zodiac that matches your Birthday, enter 1\nIf you know your Zodiac and would like to continue press 2\nTo exit, enter 0: ')
+      if choice_1 == '1':
+        user_zodiac = Zodiac.get_zodiac_sign()
+        option_selected = False
+      elif choice_1 == '2':
+        user_zodiac = Zodiac.enter_zodiac_sign()
+        option_selected = False
+      elif choice_1 == '0':
+        option_selected = False
+        break
+      else:
+        print('\nThat is not one of the options')
+    option_selected = True
+    while option_selected is True:
+      choice_2 = input('\nTo check the compatibility of your Zodiac with another, enter 2\nTo reset, enter 1\nTo exit, enter 0: ')
+      if choice_2 == '2':
+        second_option_selected = True
+        while second_option_selected is True:
+          choice_3 = input("\nIf you know the other zodiac enter 2, if you only know their birthday enter 1: ")
+          if choice_3 == '2':
+            other_zodiac = Zodiac.enter_zodiac_sign()
+            second_option_selected = False
+          elif choice_3 == '1':
+            other_zodiac = Zodiac.get_zodiac_sign()
+            second_option_selected = False
+          else:
+            print('\nThat is not one of the options')
+        print(Zodiac.compatability(user_zodiac, other_zodiac))
+        option_selected = False
+      elif choice_2 == '1':
+        option_selected = False
+        continue  
+      elif choice_2 == '0':
+        option_selected = False
+        break
+      else:
+        print('\nThat is not one of the options')
+
+
