@@ -85,61 +85,48 @@ class GUI:
     Zodiac = ['Aquarius','Pisces','Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn']
     month = ['January','February','March','April','May','June','July','August','September','October','November','December']
     day = [str(i).zfill(2) for i in range(1, 32)]
-    layout = [[sg.VPush()],[sg.Text('What is your Zodiac')],[sg.DD(Zodiac,size=(8)),sg.Button('Enter',key='Zodiac_Entered')],[sg.VPush()],[sg.Text('OR'),],[sg.VPush()],[sg.Text('When is your Birthday?')],[sg.DD(month,size=(8)),sg.DD(day,size=(8)),sg.Button('Enter',key='Birthday_Entered')],[sg.VPush()]
-    ]
-    window = sg.Window('Window Title', layout, size=(400,400),resizable=True, element_justification='center')
+    layout = [[sg.VPush()],[sg.Text('What is your Zodiac?')],[sg.DD(Zodiac,size=(8)),sg.Button('Enter',key='Primary_Zodiac_Entered')],[sg.VPush()],[sg.Text('OR'),],[sg.VPush()],
+              [sg.Text('When is your Birthday?')],[sg.DD(month,size=(8)),sg.DD(day,size=(8)),sg.Button('Enter',key='Primary_Birthday_Entered')],[sg.VPush()]] 
+    window = sg.Window('Zodiac Calculator', layout, size=(400,400),resizable=True, element_justification='center')
     while True:
       event, values = window.read()
       if event == sg.WIN_CLOSED:
         sys.exit()      
-      if event == 'Zodiac_Entered':
-        print(values[0])
-        sg.popup_yes_no('Would you like to find the compatability of your zodiac with another persons?', title='Compatability Checker')
-      if event == 'Birthday_Entered':
-        print(values[1])
-        print(values[2])
-        sg.popup_yes_no('Would you like to find the compatability of your zodiac with another persons?', title='Compatability Checker')
-    
+      if event == 'Primary_Zodiac_Entered':
+        if values[0] == '':
+          sg.popup('Please enter a Zodiac',title='ERROR')
+        else:
+          #zodiac = values[0]
+          #primary_zodiac_date = Zodiac.enter_zodiac_sign(zodiac)
+          continue_ = sg.popup_yes_no('Would you like to find the compatability of your zodiac with another persons?', title='Compatability Checker')
+          if continue_ == 'Yes':
+            layout = [[sg.VPush()],[sg.Text('What is the other Zodiac?')],[sg.DD(Zodiac,size=(8)),sg.Button('Enter',key='Other_Zodiac_Entered')],[sg.VPush()],[sg.Text('OR'),],[sg.VPush()],
+                      [sg.Text('When is the other persons Birthday?')],[sg.DD(month,size=(8)),sg.DD(day,size=(8)),sg.Button('Enter',key='Other_Birthday_Entered')],[sg.VPush()]]
+            window = sg.Window('Zodiac Compatibility', layout, size=(400,400),resizable=True, element_justification='center')
+      if event == 'Other_Zodiac_Entered':
+        if values[0] == '':
+          sg.popup('Please enter a Zodiac',title='ERROR')
+        else:
+          #zodiac = values[0]
+          #primary_zodiac_date = Zodiac.enter_zodiac_sign(zodiac)
+          pass
+      if event == 'Primary_Birthday_Entered':
+        if values[1] == '' or values[2] == '':
+          sg.popup('Please enter a Birthday',title='ERROR')
+          pass
+        else:
+          month = values[1]
+          day = values[2]
+          #primary_zodiac_date = Zodiac.get_zodiac_sign(month,day)
+          pass
+          continue_ = sg.popup_yes_no('Would you like to find the compatability of your zodiac with another persons?', title='Compatability Checker')
+          if continue_ == 'Yes':
+            pass
+          else:
+            pass
+
 if __name__ == '__main__':
   while True:
-    option_selected = True
-    while option_selected is True:
-      choice_1 = input('\nTo find the zodiac that matches your Birthday, enter 1\nIf you know your Zodiac and would like to continue press 2\nTo exit, enter 0: ')
-      if choice_1 == '1':
-        user_zodiac = Zodiac.get_zodiac_sign()
-        option_selected = False
-      elif choice_1 == '2':
-        user_zodiac = Zodiac.enter_zodiac_sign()
-        option_selected = False
-      elif choice_1 == '0':
-        option_selected = False
-        sys.exit()
-      else:
-        print('\nThat is not one of the options')
-    second_option_selected = True
-    while second_option_selected is True:
-      choice_2 = input('\nTo check the compatibility of your Zodiac with another, enter 2\nTo reset, enter 1\nTo exit, enter 0: ')
-      if choice_2 == '2':
-        third_option_selected = True
-        while third_option_selected is True:
-          choice_3 = input("\nIf you know the other zodiac enter 2, if you only know their birthday enter 1: ")
-          if choice_3 == '2':
-            other_zodiac = Zodiac.enter_zodiac_sign()
-            third_option_selected = False
-          elif choice_3 == '1':
-            other_zodiac = Zodiac.get_zodiac_sign()
-            third_option_selected = False
-          else:
-            print('\nThat is not one of the options')
-        print(Zodiac.compatability(user_zodiac, other_zodiac))
-        second_option_selected = False
-      elif choice_2 == '1':
-        second_option_selected = False
-        continue  
-      elif choice_2 == '0':
-        second_option_selected = False
-        sys.exit()
-      else:
-        print('\nThat is not one of the options')
+    GUI.zodiac_gui()
 
 
