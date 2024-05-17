@@ -5,6 +5,7 @@ import PySimpleGUI as sg
 class Zodiac: 
 
   def get_zodiac_sign(month, day):
+      day = int(day)
       if (month == 'January' and 20 <= day <= 31) or (month == 'February' and 1 <= day <= 18):
         zodiac = 'Aquarius (Jan 20 - Feb 18)'
         sg.popup('The Zodiac is Aquarius!',title='calculated zodiac:')
@@ -107,11 +108,11 @@ class GUI:
             window = sg.Window('Zodiac Compatibility', layout, size=(400,400),resizable=True, element_justification='center')
       if event == 'Primary_Birthday_Entered':
         month = values[1]
-        day = int(values[2])
+        day = values[2]
         if month == '' or day == '':
           sg.popup('Please enter a Birthday',title='ERROR')
-        elif (month == 'January' and day <= 31) or (month == 'February' and day <= 29) or (month == 'March' and day <= 31) or (month == 'April' and day <= 30) or (month == 'May' and day <= 31) or (month == 'June' and day <= 30) or (month == 'July' and day <= 31) or (month == 'August' and day <= 31) or (month == 'September' and day <= 30) or (month == 'October' and day <= 31) or (month == 'November' and day <= 30) or (month == 'December' and day <= 31):
-          primary_zodiac_date = Zodiac.get_zodiac_sign(month,day)
+        elif (month == 'January' and int(day) <= 31) or (month == 'February' and int(day) <= 29) or (month == 'March' and int(day) <= 31) or (month == 'April' and int(day) <= 30) or (month == 'May' and int(day) <= 31) or (month == 'June' and int(day) <= 30) or (month == 'July' and int(day) <= 31) or (month == 'August' and int(day) <= 31) or (month == 'September' and int(day) <= 30) or (month == 'October' and int(day) <= 31) or (month == 'November' and int(day) <= 30) or (month == 'December' and int(day) <= 31):
+          primary_zodiac_date = Zodiac.get_zodiac_sign(month,int(day))
           continue_ = sg.popup_yes_no('Would you like to find the compatibility of your zodiac with another persons?', title='Compatibility Checker')
           if continue_ == 'Yes':
             layout = [[sg.VPush()],[sg.Text('What is the other Zodiac?')],[sg.DD(other_Zodiac_List,size=(8)),sg.Button('Enter',key='Other_Zodiac_Entered')],[sg.VPush()],[sg.Text('OR'),],[sg.VPush()],
@@ -131,10 +132,10 @@ class GUI:
           window = sg.Window("Final Choice", layout)
       if event == 'Other_Birthday_Entered':
         other_month = values[1]
-        other_day = int(values[2])
+        other_day = values[2]
         if other_month == '' or other_day == '':
           sg.popup('Please enter a Birthday',title='ERROR')
-        elif (other_month == 'January' and other_day <= 31) or (other_month == 'February' and other_day <= 29) or (other_month == 'March' and other_day <= 31) or (other_month == 'April' and other_day <= 30) or (other_month == 'May' and other_day <= 31) or (other_month == 'June' and other_day <= 30) or (other_month == 'July' and other_day <= 31) or (other_month == 'August' and other_day <= 31) or (other_month == 'September' and other_day <= 30) or (other_month == 'October' and other_day <= 31) or (other_month == 'November' and other_day <= 30) or (other_month == 'December' and other_day <= 31):
+        elif (other_month == 'January' and int(other_day) <= 31) or (other_month == 'February' and other_day <= 29) or (other_month == 'March' and other_day <= 31) or (other_month == 'April' and other_day <= 30) or (other_month == 'May' and other_day <= 31) or (other_month == 'June' and other_day <= 30) or (other_month == 'July' and other_day <= 31) or (other_month == 'August' and other_day <= 31) or (other_month == 'September' and other_day <= 30) or (other_month == 'October' and other_day <= 31) or (other_month == 'November' and other_day <= 30) or (other_month == 'December' and other_day <= 31):
           other_zodiac_date = Zodiac.get_zodiac_sign(other_month,other_day)
           Rating,Info = Zodiac.compatibility(primary_zodiac_date,other_zodiac_date)
           sg.popup('                  '+Rating,Info,title=Rating)
