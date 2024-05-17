@@ -20,18 +20,11 @@ You will need to install Pandas and PYSimpleGUI to your computer
 
 Follow the guides available at their respective websites
 
-Then finally download AstroLink.py from the Github repository
+Then finally download the zip file from the Github repository
 
-To download AstroLink.py go to https://github.com/Rendrago/AstroLink/blob/main/AstroLink.py 
+Once downloaded go to your downloads folder and open the folder in your respective python environment. For VS code, open and initialize it then open file and select the AstroLink folder.
 
-Once you are here click the three dots in the upper right hand corner of your screen. You should see a download button.
-
-Select download
-
-Once downloaded go to your downloads folder and select the file. Then you should receive a prompt to open the file with 
-various programs, select your Python Environment (It will likely be Visual Studio Code)
-
-Run AstroLink.py in VSCode
+Then run the code, and install Pandas and PySimpleGUI in your workspace, and then run again.
 
 User should see a popup asking “When is your Birthday?” or "What is your Zodiac" 
 
