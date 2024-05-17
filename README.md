@@ -16,6 +16,10 @@ https://pypi.org/project/pandas/#files (Pandas)
 
 https://pypi.org/project/PySimpleGUI/#files (PYSimpleGUI)
 
+You will need to install Pandas and PYSimpleGUI to your computer
+
+Follow the guides available at their respective websites
+
 Then finally download AstroLink.py from the Github repository
 
 To download AstroLink.py go to https://github.com/Rendrago/AstroLink/blob/main/AstroLink.py 
