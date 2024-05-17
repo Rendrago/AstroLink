@@ -31,7 +31,7 @@ Run AstroLink.py in VSCode
 
 User should see a popup asking “When is your Birthday?” or "What is your Zodiac" 
 
-If you know your Zodiac simply select the empty box and use the scroll bar to find and select your Zodiac. Now skip to the part of the user guide labeled "COMPATABILITY PART"
+If you know your Zodiac simply select the empty box beside "What is your Zodiac" and use the scroll bar to find and select your Zodiac. Now skip to the part of the user guide labeled "COMPATABILITY PART"
 
 Follow the steps below if you don't know your Zodiac
 
