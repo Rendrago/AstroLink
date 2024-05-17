@@ -20,12 +20,11 @@ Then finally download AstroLink.py from the Github repository
 
 To download AstroLink.py go to https://github.com/Rendrago/AstroLink/blob/main/AstroLink.py 
 
-Once you are here click the three dots in the upper right hand corner of your screen. You should see a download button
+Once you are here click the three dots in the upper right hand corner of your screen. You should see a download button.
 
 Select download
 
 Once downloaded go to your downloads folder and select the file. Then you should receive a prompt to open the file with 
-
 various programs, select your Python Environment (It will likely be Visual Studio Code)
 
 Run AstroLink.py in VSCode
