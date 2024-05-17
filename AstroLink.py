@@ -72,7 +72,7 @@ class Zodiac:
     return zodiac_date
 
   def compatibility(zodiac1,zodiac2):
-    data = pd.read_csv("/Users/gardnergooch/Downloads/compatibility.csv",index_col=0)
+    data = pd.read_csv("compatibility.csv",index_col=0)
     cross_section = data.loc[zodiac1,zodiac2]
     compatibility_info = ''
     for i in cross_section.split()[:-3]:
@@ -135,8 +135,8 @@ class GUI:
         other_day = values[2]
         if other_month == '' or other_day == '':
           sg.popup('Please enter a Birthday',title='ERROR')
-        elif (other_month == 'January' and int(other_day) <= 31) or (other_month == 'February' and other_day <= 29) or (other_month == 'March' and other_day <= 31) or (other_month == 'April' and other_day <= 30) or (other_month == 'May' and other_day <= 31) or (other_month == 'June' and other_day <= 30) or (other_month == 'July' and other_day <= 31) or (other_month == 'August' and other_day <= 31) or (other_month == 'September' and other_day <= 30) or (other_month == 'October' and other_day <= 31) or (other_month == 'November' and other_day <= 30) or (other_month == 'December' and other_day <= 31):
-          other_zodiac_date = Zodiac.get_zodiac_sign(other_month,other_day)
+        elif (other_month == 'January' and int(other_day) <= 31) or (other_month == 'February' and int(other_day) <= 29) or (other_month == 'March' and int(other_day) <= 31) or (other_month == 'April' and int(other_day) <= 30) or (other_month == 'May' and int(other_day) <= 31) or (other_month == 'June' and int(other_day) <= 30) or (other_month == 'July' and int(other_day) <= 31) or (other_month == 'August' and int(other_day) <= 31) or (other_month == 'September' and int(other_day) <= 30) or (other_month == 'October' and int(other_day) <= 31) or (other_month == 'November' and int(other_day) <= 30) or (other_month == 'December' and int(other_day) <= 31):
+          other_zodiac_date = Zodiac.get_zodiac_sign(other_month,int(other_day))
           Rating,Info = Zodiac.compatibility(primary_zodiac_date,other_zodiac_date)
           sg.popup('                  '+Rating,Info,title=Rating)
           layout = [[sg.Text("Choose an option:")],[sg.Button("Restart"), sg.Button("Quit")]]
