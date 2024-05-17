@@ -36,3 +36,17 @@ Select the first empty box and scroll until you find your respective birth month
 box and select it, scroll through the numbers until you find the number that represents your respective birthday in 
 
 relation to the month. Once you have found and selected your birthday please select the “Enter” button. 
+
+Now you should receive a prompt that will provide you with your Zodiac symbol. Commit this to memory.
+
+Now go to the box that says "What is your Zodiac?" 
+
+Input your Zodiac sign here by selecting the blank scroll bar and scrolling until your find your Zodiac symbol and then selecting it.
+
+Press the "Enter" button
+
+You should now get a prompt asking you if you would like to check your compatability with another persons. 
+
+Select yes and then input either their Zodiac sign or if you don't know it input their birthday in a similair manner to the steps you've already followed above. 
+
+You will now be provided with a summary of your compatability with that person.
