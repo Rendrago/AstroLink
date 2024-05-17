@@ -7,7 +7,7 @@ class Zodiac:
 # Defining a function to get the zodiac sign based on month and day
   def get_zodiac_sign(month, day):
     # Converting day to integer
-      day = int(day
+      day = int(day)
       # Checking conditions to determine the zodiac sign
       # Displaying a popup with the calculated zodiac
       # Other Zodiac sign conditions follow similarly
@@ -51,7 +51,7 @@ class Zodiac:
       return zodiac
 
   def enter_zodiac_sign(zodiac):
-     # Assigning zodiac signs to their corresponding date ranges
+    # Assigning zodiac signs to their corresponding date ranges
     if zodiac == 'Aquarius':
       zodiac_date = 'Aquarius (Jan 20 - Feb 18)'
     elif zodiac == 'Pisces':
