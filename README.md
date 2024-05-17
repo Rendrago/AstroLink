@@ -29,24 +29,24 @@ various programs, select your Python Environment (It will likely be Visual Studi
 
 Run AstroLink.py in VSCode
 
-User should see a popup asking “When is your Birthday?”
+User should see a popup asking “When is your Birthday?” or "What is your Zodiac" 
 
-Select the first empty box and scroll until you find your respective birth month and select it. Now move to the second 
+If you know your Zodiac simply select the empty box and use the scroll bar to find and select your Zodiac. Now skip to the part of the user guide labeled "COMPATABILITY PART"
 
-box and select it, scroll through the numbers until you find the number that represents your respective birthday in 
+Follow the steps below if you don't know your Zodiac
 
-relation to the month. Once you have found and selected your birthday please select the “Enter” button. 
+Select the first empty box under "When is your Birthday?" and scroll until you find your respective birth month and select it. Now move to the second box and select it, scroll through the numbers until you find the number that represents your respective birthday in relation to the month. Once you have found and selected your birthday please select the “Enter” button. 
 
 Now you should receive a prompt that will provide you with your Zodiac symbol. Commit this to memory.
 
-Now go to the box that says "What is your Zodiac?" 
+Select OK
 
 Input your Zodiac sign here by selecting the blank scroll bar and scrolling until your find your Zodiac symbol and then selecting it.
 
 Press the "Enter" button
 
-You should now get a prompt asking you if you would like to check your compatability with another persons. 
+COMPATABILITY PART: You should now get a prompt asking you if you would like to check your compatability with another persons. 
 
-Select yes and then input either their Zodiac sign or if you don't know it input their birthday in a similair manner to the steps you've already followed above. 
+Select yes and then input either their Zodiac sign or if you don't know it input their birthday in a similar manner to the steps you've already followed above. 
 
 You will now be provided with a summary of your compatability with that person.
